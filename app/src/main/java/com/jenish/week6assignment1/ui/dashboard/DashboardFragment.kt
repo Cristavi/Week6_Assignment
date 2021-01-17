@@ -84,5 +84,9 @@ class DashboardFragment : Fragment() {
         etUrl.setText("")
         etAddress.setText("")
         etAge.setText("")
+
+        rdoMale.isChecked = false
+        rdoFemale.isChecked = false
+        rdOthers.isChecked = false
     }
 }
