@@ -25,6 +25,11 @@ class NotificationsFragment : Fragment() {
         notificationsViewModel =
                 ViewModelProvider(this).get(NotificationsViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_notifications, container, false)
+        
+        val webView : WebView = root.findViewById(R.id.webView)
+        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
+            webView.loadUrl("https://softwarica.edu.np")
+        })
 
 
         return root
