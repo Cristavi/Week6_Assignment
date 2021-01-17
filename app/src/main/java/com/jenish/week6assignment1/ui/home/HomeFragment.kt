@@ -18,7 +18,8 @@ import com.jenish.week6assignment1.models.Students
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
-
+    private var lstStudent = arrayListOf<Students>()
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +30,14 @@ class HomeFragment : Fragment() {
             ViewModelProvider(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
 
+        recyclerView = root.findViewById(R.id.recyclerView)
+        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+            lstStudent = (activity as SoftwaricaActivity).listStudents
+            val context = root.context
+            val adapter = StudentAdapter(lstStudent, context)
+            recyclerView.layoutManager = LinearLayoutManager(context)
+            recyclerView.adapter = adapter
+        })
 
         return root
     }
