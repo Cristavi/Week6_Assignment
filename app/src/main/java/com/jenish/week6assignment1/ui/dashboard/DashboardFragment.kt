@@ -62,6 +62,16 @@ class DashboardFragment : Fragment() {
             }
             btnSave.setOnClickListener {
 
+                val studentName = etName.text.toString()
+                val studentImage = etUrl.text.toString()
+                val studentAge = etAge.text.toString().toInt()
+                val studentAddress = etAddress.text.toString()
+                gender
+                val student = Students(studentImage, studentName, studentAge, studentAddress, gender)
+                lstStudent.add(student)
+                Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show()
+
+
                 emptyBoxes()
             }
         })
