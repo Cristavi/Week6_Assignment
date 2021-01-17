@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun login(){
         if (etUsername.text.toString().toLowerCase().trim() == "softwarica" && etPassword.text.toString() == "coventry"){
-            val toast = Toast.makeText(this, "Hello admin", Toast.LENGTH_SHORT)
+            val toast = Toast.makeText(this, "Hello", Toast.LENGTH_SHORT)
 
             toast.setGravity(android.view.Gravity.CENTER, 0, 0)
             toast.show()
