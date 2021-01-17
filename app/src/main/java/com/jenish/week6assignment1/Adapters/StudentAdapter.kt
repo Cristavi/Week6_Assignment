@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.jenish.week6assignment1.R
@@ -60,6 +61,10 @@ class StudentAdapter(
             listStudents.removeAt(position)
             notifyItemRemoved(position)
             notifyItemRangeChanged(position, listStudents.size)
+        }
+
+        holder.imgUrl.setOnClickListener{
+            Toast.makeText(context, "${holder.tvName.text}", Toast.LENGTH_SHORT).show()
         }
     }
 
