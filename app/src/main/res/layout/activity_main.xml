@@ -8,46 +8,61 @@
     android:orientation="vertical"
     android:background="#3E3939">
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
-        android:text="SoftUser"
-        android:textSize="50sp"
-        android:gravity="center"
-        android:fontFamily="sans-serif-condensed-light"
-        android:textStyle="bold"
-        android:textColor="#fff"/>
+        android:src="@drawable/softwarica"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        />
 
-    <TextView
-        style="@style/textViewStyle"
-        android:text="Username"/>
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         style="@style/editTextStyle"
         android:backgroundTint="#fff"
-        android:hint="Enter username"
-        android:textColorHint="#fff"/>
+        android:textColorHint="#fff"
+        >
 
-    <TextView
-        style="@style/textViewStyle"
-        android:text="Password"
-        android:layout_marginTop="20dp"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#3E3939"
+            android:textColor="#fff"
+            android:hint="Username"
+            style="@style/textLabel"
+            />
 
-    <EditText
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         style="@style/editTextStyle"
         android:backgroundTint="#fff"
-        android:hint="Enter password"
-        android:textColorHint="#fff"/>
+        android:textColorHint="#fff"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:inputType="textPassword"
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#3E3939"
+            android:textColor="#fff"
+            android:hint="Password"
+            style="@style/textLabel"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:layout_marginRight="70dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/btnLogin"
+        android:textColor="#fff"
         android:text="Login"
-        style="@style/roundedButtonStyle"/>
+        android:textSize="20sp"
+        android:textStyle="bold"
+        style="@style/roundedButtonStyle" />
 
 
 </LinearLayout>

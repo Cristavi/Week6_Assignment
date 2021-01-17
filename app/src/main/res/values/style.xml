@@ -20,6 +20,18 @@
     <style name="roundedButtonStyle">
         <item name="android:background">@drawable/rounded_shape</item>
         <item name="backgroundTint">#A07C7C</item>
+        <item name="android:layout_marginLeft">100dp</item>
+        <item name="android:layout_marginRight">100dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">30dp</item>
+    </style>
+
+    <style name="textLabel">
+        <item name="android:textSize">20sp</item>
+        <item name="colorControlActivated">#A07C7C</item>
+        <item name="colorControlHighlight">#A07C7C</item>
+        <item name="colorControlNormal">#A07C7C</item>
     </style>
 
 </resources>
