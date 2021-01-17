@@ -1,6 +1,7 @@
 package com.jenish.week6assignment1.ui.dashboard
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -62,17 +63,22 @@ class DashboardFragment : Fragment() {
             }
             btnSave.setOnClickListener {
 
-                val studentName = etName.text.toString()
-                val studentImage = etUrl.text.toString()
-                val studentAge = etAge.text.toString().toInt()
-                val studentAddress = etAddress.text.toString()
-                gender
-                val student = Students(studentImage, studentName, studentAge, studentAddress, gender)
-                lstStudent.add(student)
-                Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show()
+                if (validateData()) {
+                    val studentName = etName.text.toString()
+                    val studentImage = etUrl.text.toString()
+                    val studentAge = etAge.text.toString().toInt()
+                    val studentAddress = etAddress.text.toString()
+                    gender
+                    val student = Students(studentImage, studentName, studentAge, studentAddress, gender)
+                    lstStudent.add(student)
+                    Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show()
 
 
-                emptyBoxes()
+                    emptyBoxes()
+                }
+                else{
+                    return@setOnClickListener
+                }
             }
         })
 
@@ -88,5 +94,34 @@ class DashboardFragment : Fragment() {
         rdoMale.isChecked = false
         rdoFemale.isChecked = false
         rdOthers.isChecked = false
+    }
+
+    private fun validateData() : Boolean{
+        var flag = true
+
+        when {
+            TextUtils.isEmpty(etUrl.text) -> {
+                etUrl.error = "Please enter your profile image url"
+                etUrl.requestFocus()
+                flag = false
+            }
+            TextUtils.isEmpty(etAddress.text) -> {
+                etAddress.error = "Please enter your address"
+                etAddress.requestFocus()
+                flag = false
+            }
+            TextUtils.isEmpty(etAge.text) -> {
+                etAge.error = "Please enter your age"
+                etAge.requestFocus()
+                flag = false
+            }
+            TextUtils.isEmpty(etName.text) -> {
+                etName.error = "Please enter your name"
+                etName.requestFocus()
+                flag = false
+            }
+        }
+
+        return flag
     }
 }
