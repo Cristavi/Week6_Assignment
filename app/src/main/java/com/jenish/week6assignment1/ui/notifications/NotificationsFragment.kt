@@ -15,6 +15,8 @@ class NotificationsFragment : Fragment() {
 
     private lateinit var notificationsViewModel: NotificationsViewModel
 
+
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
